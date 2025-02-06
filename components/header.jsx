@@ -32,7 +32,7 @@ const Header = () => {
             className="h-12 py-1 w-auto object-contain"
           /> */}
           <span className="text-3xl font-bold">
-            Career<span className="text-blue-600">AI</span>{" "}
+            Aspire<span className="text-blue-600">AI</span>{" "}
           </span>
         </Link>
 
