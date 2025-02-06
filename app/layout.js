@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           >
             {/* MAIN SECTION */}
             <Header />
-            <main className="min-h-screen pt-40">{children}</main>
+            <main className="min-h-screen">{children}</main>
 
             {/* FOOTER SECTION */}
             <footer className="bg-muted/50 py-12">

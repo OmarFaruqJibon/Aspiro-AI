@@ -70,3 +70,82 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  
+   background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+
+    pointer-events: none;
+    z-index: -1;
+
+
+  /* background-color: #0a0a0a; 
+  background-image: 
+    radial-gradient(circle, rgba(0, 255, 255, 0.3) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 0, 255, 0.3) 1px, transparent 1px);
+  background-size: 100px 100px, 210px 210px;
+  
+  animation: neonMove 40s linear infinite; */
+
+  
+
+  
+}
+/* @keyframes neonMove {
+  0% { background-position: 0% 0%, 50% 50%; }
+  100% { background-position: 200% 200%, 150% 150%; }
+} */
+
+.grid-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.9));
+}
+
+
+
+
+@layer utilities {
+  .gradient {
+    @apply bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600;
+  }
+  .gradient-title {
+    @apply gradient font-extrabold tracking-tighter text-transparent bg-clip-text pb-2 pr-2;
+  }
+}
+
+.hero-image-wrapper {
+  perspective: 1000px;
+}
+
+.hero-image {
+  /* transform: rotateX(20deg) scale(0.9) translateY(-50); */
+  transform: rotateX(15deg) scale(1);
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.hero-image.scrolled {
+  transform: rotateX(0deg) scale(1) translateY(40px);
+}
