@@ -2,6 +2,7 @@
 
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
+import { generateAIInsights } from "./dashboard";
 
 
 export async function updateUser(data) {
@@ -26,18 +27,12 @@ export async function updateUser(data) {
 
                 // If industry doesn't exist, create it with default values
                 if (!industryInsight) {
-                    // const insights = await generateAIInsights(data.industry);
+                    const insights = await generateAIInsights(data.industry);
 
                     industryInsight = await db.industryInsight.create({
                         data: {
                             industry: data.industry,
-                            salaryRanges: [],
-                            growthRate: 0,
-                            demandLevel: "MEDIUM",
-                            topSkills: [],
-                            marketOutlook: "NEUTRAL",
-                            keyTrends: [],
-                            recommendedSkills: [],
+                            ...insights,
                             nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
                         },
                     });
@@ -63,7 +58,7 @@ export async function updateUser(data) {
             }
         );
 
-        // revalidatePath("/");
+        revalidatePath("/");
         // return result.user;
         return { success: true, ...result };
     } catch (error) {
@@ -92,11 +87,13 @@ export async function getUserOnboardingStatus() {
             select: {
                 industry: true,
             },
+
         });
 
         return {
             isOnboarded: !!user?.industry,
         };
+
     } catch (error) {
         console.error("Error checking onboarding status:", error);
         throw new Error("Failed to check onboarding status");
