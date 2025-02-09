@@ -74,21 +74,6 @@ const DashboardView = ({ insights }) => {
     { addSuffix: true }
   );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -163,10 +148,39 @@ const DashboardView = ({ insights }) => {
       <Card className="col-span-4">
         <CardHeader>
           <CardTitle>Salary Ranges by Role</CardTitle>
+
           <CardDescription>
-            Displaying minimum, median, and maximum salaries (in thousands)
+
+            <div class="legend">
+              <div class="legend-item">
+                <div class="color-box purple"></div>
+                <span>Minimum</span>
+              </div>
+              <div class="legend-item">
+                <div class="color-box sky"></div>
+                <span>Median</span>
+              </div>
+              <div class="legend-item">
+                <div class="color-box blue"></div>
+                <span>Maximum</span>
+              </div>
+            </div>
+
+
+
+
+
+
           </CardDescription>
         </CardHeader>
+
+
+
+
+
+
+
+
         <CardContent>
           <div className="h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -191,9 +205,9 @@ const DashboardView = ({ insights }) => {
                     return null;
                   }}
                 />
-                <Bar dataKey="min" fill="#94a3b8" name="Min Salary (K)" />
-                <Bar dataKey="median" fill="#64748b" name="Median Salary (K)" />
-                <Bar dataKey="max" fill="#475569" name="Max Salary (K)" />
+                <Bar dataKey="min" fill="#8534c5" name="Min Salary (K)" />
+                <Bar dataKey="median" fill="#00BCD4" name="Median Salary (K)" />
+                <Bar dataKey="max" fill="#3F51B5" name="Max Salary (K)" />
               </BarChart>
             </ResponsiveContainer>
           </div>
