@@ -3,6 +3,7 @@
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { generateAIInsights } from "./dashboard";
+import { revalidatePath } from "next/cache";
 
 
 export async function updateUser(data) {
