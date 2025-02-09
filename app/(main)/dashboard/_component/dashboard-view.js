@@ -151,17 +151,17 @@ const DashboardView = ({ insights }) => {
 
           <CardDescription>
 
-            <div class="legend">
-              <div class="legend-item">
-                <div class="color-box purple"></div>
+            <div className="legend">
+              <div className="legend-item">
+                <div className="color-box purple"></div>
                 <span>Minimum</span>
               </div>
-              <div class="legend-item">
-                <div class="color-box sky"></div>
+              <div className="legend-item">
+                <div className="color-box sky"></div>
                 <span>Median</span>
               </div>
-              <div class="legend-item">
-                <div class="color-box blue"></div>
+              <div className="legend-item">
+                <div className="color-box blue"></div>
                 <span>Maximum</span>
               </div>
             </div>
