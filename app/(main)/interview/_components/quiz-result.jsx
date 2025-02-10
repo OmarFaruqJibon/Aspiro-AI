@@ -47,13 +47,24 @@ export default function QuizResult({
                   <XCircle className="h-5 w-5 text-red-500 flex-shrink-0" />
                 )}
               </div>
-              <div className="text-sm text-muted-foreground">
-                <p>Your answer: {q.userAnswer}</p>
-                {!q.isCorrect && <p>Correct answer: {q.answer}</p>}
+              <div className="text-sm text-muted-foreground py-2">
+                <p className="pb-1">
+                  <b>Your answer:</b> {q.userAnswer}
+                </p>
+                {!q.isCorrect && (
+                  <p>
+                    <b>Correct answer:</b> {q.answer}
+                  </p>
+                )}
               </div>
               <div className="text-sm bg-muted p-2 rounded">
-                <p className="font-medium">Explanation:</p>
-                <p>{q.explanation}</p>
+                <p className="font-medium">Explanation</p>
+                <p
+                  className="text-muted-foreground"
+                  style={{ fontSize: "13px" }}
+                >
+                  {q.explanation}
+                </p>
               </div>
             </div>
           ))}

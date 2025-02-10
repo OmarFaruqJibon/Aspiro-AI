@@ -106,7 +106,7 @@ export default function Quiz() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            This quiz contains 5 questions specific to your industry and skills.
+            This quiz contains 3 questions specific to your industry and skills.
             Take your time and choose the best answer for each question.
           </p>
         </CardContent>
@@ -120,6 +120,7 @@ export default function Quiz() {
   }
 
   const question = quizData[currentQuestion];
+  // console.log(question.explanation);
 
   return (
     <Card className="mx-2">
@@ -146,10 +147,17 @@ export default function Quiz() {
         {showExplanation && (
           <div className="mt-4 p-4 bg-muted rounded-lg">
             <p className="font-medium">Explanation:</p>
-            <p className="text-muted-foreground">{question.explanation}</p>
+            <p className="text-muted-foreground">
+              {question.explanation.split(/(?=For Example)/)[0]}
+            </p>{" "}
+            <br />
+            <p style={{ marginTop: "15px" }} className="text-muted-foreground">
+              {question.explanation.split(/(?=For Example)/)[1]}
+            </p>
           </div>
         )}
       </CardContent>
+
       <CardFooter className="flex justify-between">
         {!showExplanation && (
           <Button

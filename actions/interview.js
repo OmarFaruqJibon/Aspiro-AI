@@ -5,12 +5,8 @@ import { auth } from "@clerk/nextjs/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
-
-
-
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
 
 
 export async function generateQuiz() {
@@ -25,23 +21,25 @@ export async function generateQuiz() {
 
     try {
         const prompt = `
-    Generate 5 technical interview questions for a ${user.industry
+    Generate 3 technical interview questions for a ${user.industry
             } professional${user.skills?.length ? ` with expertise in ${user.skills.join(", ")}` : ""
             }.
     
-    Each question should be multiple choice with 3 options.
+    Each question should be multiple choice with 4 options.
+    There should be explanation for each questions. The explanation should be in extensively and in 100 words which is easy to understand, and give example or show some code if possible. If there need an Example, it will be start by For Example.
     
     Return the response in this JSON format only, no additional text:
     {
       "questions": [
         {
           "question": "string",
-          "options": ["string", "string", "string"],
+          "options": ["string", "string", "string", "string"],
           "correctAnswer": "string",
           "explanation": "string"
         }
       ]
     }
+    
   `;
 
         const result = await model.generateContent(prompt);
@@ -99,7 +97,7 @@ export async function saveQuizResult(questions, answers, score) {
   
         Based on these mistakes, provide a concise, specific improvement tip.
         Focus on the knowledge gaps revealed by these wrong answers.
-        Keep the response under 2 sentences and make it encouraging.
+        Keep the response under 3 sentences and make it encouraging.
         Don't explicitly mention the mistakes, instead focus on what to learn/practice.
       `;
 
