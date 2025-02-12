@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "./ui/button";
 import {
-  PenBox,
   LayoutDashboard,
-  FileText,
-  GraduationCap,
   ChevronDown,
-  StarsIcon,
+  Earth,
+  Bot,
+  FileUser,
+  BookText,
+  LetterText,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -25,18 +26,16 @@ const Header = async () => {
 
   return (
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/">
-          {/* <Image
+      <nav className=" md:px-12 px-4 h-16 flex items-center justify-between">
+        <Link href="/" className="flex flex-row items-center">
+          <Image
             src={"/logo.png"}
-            alt="Sensai Logo"
-            width={200}
-            height={60}
-            className="h-12 py-1 w-auto object-contain"
-          /> */}
-          <span className="text-3xl font-bold">
-            Aspire<span className="text-blue-600">AI</span>{" "}
-          </span>
+            alt="AspiroAI Logo"
+            width={180}
+            height={50}
+            className="h-11 py-1 w-auto object-contain"
+          />
+          <span className="text-2xl font-bold">Aspiro AI</span>
         </Link>
 
         {/* Action Buttons */}
@@ -47,8 +46,8 @@ const Header = async () => {
                 variant="outline"
                 className="hidden md:inline-flex items-center gap-2"
               >
-                <LayoutDashboard className="h-4 w-4" />
-                Industry Insights
+                <Earth className="h-4 w-4" />
+                Dashboard
               </Button>
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
                 <LayoutDashboard className="h-4 w-4" />
@@ -59,15 +58,15 @@ const Header = async () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button className="flex items-center gap-2">
-                  <StarsIcon className="h-4 w-4" />
-                  <span className="hidden md:block">Growth Tools</span>
+                  <Bot className="h-4 w-4" />
+                  <span className="hidden md:block">AI Tools</span>
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem asChild>
                   <Link href="/resume" className="flex items-center gap-2">
-                    <FileText className="h-4 w-4" />
+                    <FileUser className="h-4 w-4" />
                     Build Resume
                   </Link>
                 </DropdownMenuItem>
@@ -76,14 +75,14 @@ const Header = async () => {
                     href="/ai-cover-letter"
                     className="flex items-center gap-2"
                   >
-                    <PenBox className="h-4 w-4" />
+                    <LetterText className="h-4 w-4" />
                     Cover Letter
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/interview" className="flex items-center gap-2">
-                    <GraduationCap className="h-4 w-4" />
-                    Interview Prep
+                    <BookText className="h-4 w-4" />
+                    Interview Preparation
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>

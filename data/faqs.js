@@ -1,32 +1,27 @@
 export const faqs = [
   {
-    question: "What makes Sensai unique as a career development tool?",
+    question: "What is Aspiro AI?",
     answer:
-      "Sensai combines AI-powered career tools with industry-specific insights to help you advance your career. Our platform offers three main features: an intelligent resume builder, a cover letter generator, and an adaptive interview preparation system. Each tool is tailored to your industry and skills, providing personalized guidance for your professional journey.",
+      "Aspiro AI is an advanced platform designed to help job seekers with resume building, interview preparation, and career development through AI-powered tools and personalized advice to boost your job prospects and professional growth.",
   },
   {
-    question: "How does Sensai create tailored content?",
+    question: "How does the resume builder work?",
     answer:
-      "Sensai learns about your industry, experience, and skills during onboarding. It then uses this information to generate customized resumes, cover letters, and interview questions. The content is specifically aligned with your professional background and industry standards, making it highly relevant and effective.",
+      "The resume builder uses AI to analyze your experience, skills, and job preferences, then generates a well-structured, customized resume. It ensures your resume is optimized for Applicant Tracking Systems (ATS) to increase your chances of landing interviews.",
   },
   {
-    question: "How accurate and up-to-date are Sensai's industry insights?",
+    question: "Can I use Aspiro AI for interview preparation?",
     answer:
-      "We update our industry insights weekly using advanced AI analysis of current market trends. This includes salary data, in-demand skills, and industry growth patterns. Our system constantly evolves to ensure you have the most relevant information for your career decisions.",
+      "Yes, Aspiro AI offers AI-generated mock interview questions tailored to the job role you're applying for. It also provides feedback on your answers, helping you practice and refine your responses for real interviews.",
   },
   {
-    question: "Is my data secure with Sensai?",
+    question: "Is Aspiro AI free to use?",
     answer:
-      "Absolutely. We prioritize the security of your professional information. All data is encrypted and securely stored using industry-standard practices. We use Clerk for authentication and never share your personal information with third parties.",
+      "Aspiro AI offers both free and premium plans. The free version provides basic tools like resume building and limited interview preparation. The premium plan unlocks advanced features, including personalized coaching and unlimited access to resources.",
   },
   {
-    question: "How can I track my interview preparation progress?",
+    question: "How secure is my data on Aspiro AI?",
     answer:
-      "Sensai tracks your performance across multiple practice interviews, providing detailed analytics and improvement suggestions. You can view your progress over time, identify areas for improvement, and receive AI-generated tips to enhance your interview skills based on your responses.",
-  },
-  {
-    question: "Can I edit the AI-generated content?",
-    answer:
-      "Yes! While Sensai generates high-quality initial content, you have full control to edit and customize all generated resumes, cover letters, and other content. Our markdown editor makes it easy to refine the content to perfectly match your needs.",
+      "Aspiro AI prioritizes your privacy and data security. We use encryption to protect your personal and professional data. Your information is never shared with third parties without your consent, ensuring a safe and secure experience.",
   },
 ];

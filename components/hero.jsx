@@ -29,31 +29,32 @@ const HeroSection = () => {
   return (
     <section className="w-full pt-36 md:pt-48 pb-10 mb-12">
       <div className="space-y-6 text-center">
-        <div className="space-y-6 mx-auto">
-          <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl gradient-title animate-gradient">
-            Your AI Career Coach for
+        <div className="space-y-6 mx-auto mb-7">
+          <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl animate-gradient">
+            Your <span style={{ color: "#594ecc" }}>Intelligent</span> Career
+            Navigator
             <br />
-            Professional Success
           </h1>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
-            Advance your career with personalized guidance, interview prep, and
-            AI-powered tools for job success.
+            Unlock Your Career Potential with Aspiro AI. Get AI-powered resumes,
+            cover letters, and mock interviews in seconds!
           </p>
         </div>
+
         <div className="flex justify-center space-x-4">
           <Link href="/dashboard">
-            <Button size="lg" className="px-8">
-              Get Started
-            </Button>
-          </Link>
-          <Link href="#">
-            <Button size="lg" variant="outline" className="px-8">
-              Watch Demo
+            <Button size="lg" className="glow-on-hover my-10">
+              Lets Start
             </Button>
           </Link>
         </div>
+
         <div className="hero-image-wrapper mt-5 md:mt-0">
           <div ref={imageRef} className="hero-image">
+            {/* <p>
+              We develop AI solutions that enhance customer interactions,
+              eradicate tedious tasks, and drive business growth
+            </p> */}
             <Image
               src="/banner5.jpg"
               width={1080}

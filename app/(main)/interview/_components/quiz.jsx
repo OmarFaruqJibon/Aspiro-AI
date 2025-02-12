@@ -86,7 +86,7 @@ export default function Quiz() {
   };
 
   if (generatingQuiz) {
-    return <BarLoader className="mt-4" width={"100%"} color="gray" />;
+    return <BarLoader className="mt-4" width={"100%"} color="purple" />;
   }
 
   // Show results if quiz is completed
@@ -100,18 +100,18 @@ export default function Quiz() {
 
   if (!quizData) {
     return (
-      <Card className="mx-2">
+      <Card className="mx-2 mt-5">
         <CardHeader>
-          <CardTitle>Ready to test your knowledge?</CardTitle>
+          <CardTitle>Are You Ready to Challenge Yourself?</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            This quiz contains 3 questions specific to your industry and skills.
-            Take your time and choose the best answer for each question.
+            This quiz features 3 questions based on your industry and skills.
+            Take your time and select the best answer for each one.
           </p>
         </CardContent>
         <CardFooter>
-          <Button onClick={generateQuizFn} className="w-full">
+          <Button onClick={generateQuizFn} className="buttonn-effect">
             Start Quiz
           </Button>
         </CardFooter>
@@ -120,7 +120,7 @@ export default function Quiz() {
   }
 
   const question = quizData[currentQuestion];
-  // console.log(question.explanation);
+  console.log(question.explanation.split(/(?=For example)/i));
 
   return (
     <Card className="mx-2">
@@ -146,13 +146,13 @@ export default function Quiz() {
 
         {showExplanation && (
           <div className="mt-4 p-4 bg-muted rounded-lg">
-            <p className="font-medium">Explanation:</p>
+            <p className="font-medium">Explanation</p>
             <p className="text-muted-foreground">
-              {question.explanation.split(/(?=For Example)/)[0]}
-            </p>{" "}
+              {question.explanation.split(/(?=For example)/i)[0]}
+            </p>
             <br />
-            <p style={{ marginTop: "15px" }} className="text-muted-foreground">
-              {question.explanation.split(/(?=For Example)/)[1]}
+            <p style={{ marginTop: "10px" }} className="text-muted-foreground">
+              {question.explanation.split(/(?=For example)/i)[1]}
             </p>
           </div>
         )}

@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import {
   Card,
@@ -35,11 +36,12 @@ export default function PerformanceChart({ assessments }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="gradient-title text-3xl md:text-4xl">
-          Performance Trend
+        <CardTitle className="text-xl md:text-2xl">
+          Performance Progress
         </CardTitle>
-        <CardDescription>Your quiz scores over time</CardDescription>
+        <CardDescription>Quiz scores over time</CardDescription>
       </CardHeader>
+
       <CardContent>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
@@ -55,7 +57,7 @@ export default function PerformanceChart({ assessments }) {
                         <p className="text-sm font-medium">
                           Score: {payload[0].value}%
                         </p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs text-green-500">
                           {payload[0].payload.date}
                         </p>
                       </div>
@@ -64,10 +66,11 @@ export default function PerformanceChart({ assessments }) {
                   return null;
                 }}
               />
+              <Legend />
               <Line
                 type="monotone"
                 dataKey="score"
-                stroke="hsl(var(--primary))"
+                stroke="#22c55e"
                 strokeWidth={2}
               />
             </LineChart>

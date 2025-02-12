@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "AI CareerForge",
-  description: "AI CareerForge is an AI-powered career coaching platform designed to help job seekers streamline their job application process.",
+  title: "Aspiro AI",
+  description: "Aspiro AI - An AI-powered career coaching platform designed to help job seekers streamline their job application process.",
 };
 
 export default function RootLayout({ children }) {

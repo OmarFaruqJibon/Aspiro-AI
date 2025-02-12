@@ -14,9 +14,9 @@ export default function QuizResult({
 
   return (
     <div className="mx-auto">
-      <h1 className="flex items-center gap-2 text-3xl gradient-title">
-        <Trophy className="h-6 w-6 text-yellow-500" />
-        Quiz Results
+      <h1 className="flex items-center gap-2 text-2xl gradient-title">
+        <Trophy className="h-5 w-5 text-amber-500" />
+        Result
       </h1>
 
       <CardContent className="space-y-6">
@@ -29,7 +29,7 @@ export default function QuizResult({
         {/* Improvement Tip */}
         {result.improvementTip && (
           <div className="bg-muted p-4 rounded-lg">
-            <p className="font-medium">Improvement Tip:</p>
+            <p className="font-medium">Improvement Tip</p>
             <p className="text-muted-foreground">{result.improvementTip}</p>
           </div>
         )}
@@ -63,7 +63,9 @@ export default function QuizResult({
                   className="text-muted-foreground"
                   style={{ fontSize: "13px" }}
                 >
-                  {q.explanation}
+                  {/* {q.explanation} */}
+                  {q.explanation.split(/(?=For example)/i)[0]}
+                  {q.explanation.split(/(?=For example)/i)[1]}
                 </p>
               </div>
             </div>
