@@ -23,7 +23,8 @@ import useFetch from "@/hooks/use-fetch";
 import { useUser } from "@clerk/nextjs";
 import { entriesToMarkdown } from "@/app/lib/helper";
 import { resumeSchema } from "@/app/lib/schema";
-import html2pdf from "html2pdf.js/dist/html2pdf.min.js";
+
+// import html2pdf from "html2pdf.js/dist/html2pdf.min.js";
 
 export default function ResumeBuilder({ initialContent }) {
   const [activeTab, setActiveTab] = useState("edit");
@@ -84,11 +85,10 @@ export default function ResumeBuilder({ initialContent }) {
   const getContactMarkdown = () => {
     const { contactInfo } = formValues;
     const parts = [];
-    if (contactInfo.email) parts.push(`📧 ${contactInfo.email}`);
-    if (contactInfo.mobile) parts.push(`📱 ${contactInfo.mobile}`);
-    if (contactInfo.linkedin)
-      parts.push(`💼 [LinkedIn](${contactInfo.linkedin})`);
-    if (contactInfo.twitter) parts.push(`🐦 [Twitter](${contactInfo.twitter})`);
+    if (contactInfo.email) parts.push(`Email: ${contactInfo.email}`);
+    if (contactInfo.mobile) parts.push(`Phone: ${contactInfo.mobile}`);
+    if (contactInfo.linkedin) parts.push(`LinkedIn: ${contactInfo.linkedin}`);
+    if (contactInfo.address) parts.push(`Address: ${contactInfo.address}`);
 
     return parts.length > 0
       ? `## <div align="center">${user.fullName}</div>
@@ -112,6 +112,7 @@ export default function ResumeBuilder({ initialContent }) {
 
   const [isGenerating, setIsGenerating] = useState(false);
 
+  // generate PDF
   const generatePDF = async () => {
     setIsGenerating(true);
     try {
@@ -124,7 +125,7 @@ export default function ResumeBuilder({ initialContent }) {
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
       };
 
-      await html2pdf().set(opt).from(element).save();
+      // await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error("PDF generation error:", error);
     } finally {
@@ -132,6 +133,7 @@ export default function ResumeBuilder({ initialContent }) {
     }
   };
 
+  // save Resume
   const onSubmit = async (data) => {
     try {
       const formattedContent = previewContent
@@ -148,8 +150,9 @@ export default function ResumeBuilder({ initialContent }) {
 
   return (
     <div data-color-mode="light" className="space-y-4">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-        <h1 className="font-bold text-5xl md:text-6xl">Resume Builder</h1>
+      {/* Header */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-2 mb-3">
+        <h1 className="font-bold text-4xl md:text-4xl">Resume Builder</h1>
         <div className="space-x-2">
           <Button
             variant="destructive"
@@ -187,10 +190,11 @@ export default function ResumeBuilder({ initialContent }) {
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList>
           <TabsTrigger value="edit">Form</TabsTrigger>
-          <TabsTrigger value="preview">Markdown</TabsTrigger>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="edit">
+        {/* Form */}
+        <TabsContent className="mt-4" value="edit">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             {/* Contact Information */}
             <div className="space-y-4">
@@ -236,18 +240,17 @@ export default function ResumeBuilder({ initialContent }) {
                     </p>
                   )}
                 </div>
+
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">
-                    Twitter/X Profile
-                  </label>
+                  <label className="text-sm font-medium">Address</label>
                   <Input
-                    {...register("contactInfo.twitter")}
+                    {...register("contactInfo.address")}
                     type="url"
-                    placeholder="https://twitter.com/your-handle"
+                    placeholder="Your Address"
                   />
-                  {errors.contactInfo?.twitter && (
+                  {errors.contactInfo?.address && (
                     <p className="text-sm text-red-500">
-                      {errors.contactInfo.twitter.message}
+                      {errors.contactInfo.address.message}
                     </p>
                   )}
                 </div>
@@ -387,7 +390,7 @@ export default function ResumeBuilder({ initialContent }) {
             <div className="flex p-3 gap-2 items-center border-2 border-yellow-600 text-yellow-600 rounded mb-2">
               <AlertTriangle className="h-5 w-5" />
               <span className="text-sm">
-                You will lose editied markdown if you update the form data.
+                If you update the form data, any edited markdown will be lost.
               </span>
             </div>
           )}

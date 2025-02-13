@@ -31,11 +31,11 @@ const HeroSection = () => {
       <div className="space-y-6 text-center">
         <div className="space-y-6 mx-auto mb-7">
           <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl animate-gradient">
-            Your <span style={{ color: "#594ecc" }}>Intelligent</span> Career
+            Your <span style={{ color: "#00ffff" }}>Intelligent</span> Career
             Navigator
             <br />
           </h1>
-          <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
+          <p className="mx-auto max-w-[600px] md:text-lg">
             Unlock Your Career Potential with Aspiro AI. Get AI-powered resumes,
             cover letters, and mock interviews in seconds!
           </p>

@@ -43,10 +43,10 @@ const Header = async () => {
           <SignedIn>
             <Link href="/dashboard">
               <Button
-                variant="outline"
+                variant="ghost"
                 className="hidden md:inline-flex items-center gap-2"
               >
-                <Earth className="h-4 w-4" />
+                {/* <Earth className="h-4 w-4" /> */}
                 Dashboard
               </Button>
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
@@ -54,10 +54,10 @@ const Header = async () => {
               </Button>
             </Link>
 
-            {/* Growth Tools Dropdown */}
+            {/* AI Tools Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="flex items-center gap-2">
+                <Button variant="outline" className="flex items-center gap-2">
                   <Bot className="h-4 w-4" />
                   <span className="hidden md:block">AI Tools</span>
                   <ChevronDown className="h-4 w-4" />

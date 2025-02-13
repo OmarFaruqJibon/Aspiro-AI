@@ -1,4 +1,3 @@
-// app/resume/_components/entry-form.jsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -26,7 +25,7 @@ const formatDisplayDate = (dateString) => {
   const date = parse(dateString, "yyyy-MM", new Date());
   return format(date, "MMM yyyy");
 };
- 
+
 export function EntryForm({ type, entries, onChange }) {
   const [isAdding, setIsAdding] = useState(false);
 
