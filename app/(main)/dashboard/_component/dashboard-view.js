@@ -167,21 +167,8 @@ const DashboardView = ({ insights }) => {
                 <span>Maximum</span>
               </div>
             </div>
-
-
-
-
-
-
           </CardDescription>
         </CardHeader>
-
-
-
-
-
-
-
 
         <CardContent>
           <div className="h-[400px]">
@@ -207,6 +194,7 @@ const DashboardView = ({ insights }) => {
                     return null;
                   }}
                 />
+
                 <Bar dataKey="min" fill="#8534c5" name="Min Salary (K)" />
                 <Bar dataKey="median" fill="#00BCD4" name="Median Salary (K)" />
                 <Bar dataKey="max" fill="#3F51B5" name="Max Salary (K)" />
@@ -226,20 +214,15 @@ const DashboardView = ({ insights }) => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-4">
+            <div className="flex flex-wrap gap-2">
               {insights.keyTrends.map((trend, index) => (
-                <li key={index} className="flex items-start space-x-2">
-                  <div className="h-2 w-2 mt-2 rounded-full bg-primary" />
-                  <span>{trend}</span>
-                </li>
+                <Badge key={index} variant="outline">
+                  {trend}
+                </Badge>
               ))}
-            </ul>
+            </div>
           </CardContent>
         </Card>
-
-
-
-
 
         <Card>
           <CardHeader>
@@ -256,11 +239,6 @@ const DashboardView = ({ insights }) => {
             </div>
           </CardContent>
         </Card>
-
-
-
-
-
       </div>
     </div>
   );

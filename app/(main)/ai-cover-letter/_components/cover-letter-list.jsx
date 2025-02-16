@@ -40,11 +40,11 @@ export default function CoverLetterList({ coverLetters }) {
 
   if (!coverLetters?.length) {
     return (
-      <Card>
+      <Card className="small-screen-card">
         <CardHeader>
-          <CardTitle>No Cover Letters Yet</CardTitle>
+          <CardTitle>No Cover Letter</CardTitle>
           <CardDescription>
-            Create your first cover letter to get started
+            Click on Create New button to generate an AI powered cover letter
           </CardDescription>
         </CardHeader>
       </Card>
@@ -54,11 +54,11 @@ export default function CoverLetterList({ coverLetters }) {
   return (
     <div className="space-y-4">
       {coverLetters.map((letter) => (
-        <Card key={letter.id} className="group relative ">
+        <Card key={letter.id} className="group relative small-screen-card">
           <CardHeader>
             <div className="flex items-start justify-between">
               <div>
-                <CardTitle className="text-xl gradient-title">
+                <CardTitle className="text-xl pb-2">
                   {letter.jobTitle} at {letter.companyName}
                 </CardTitle>
                 <CardDescription>
@@ -83,9 +83,8 @@ export default function CoverLetterList({ coverLetters }) {
                     <AlertDialogHeader>
                       <AlertDialogTitle>Delete Cover Letter?</AlertDialogTitle>
                       <AlertDialogDescription>
-                        This action cannot be undone. This will permanently
-                        delete your cover letter for {letter.jobTitle} at{" "}
-                        {letter.companyName}.
+                        This action will permanently delete your cover letter
+                        for {letter.jobTitle} at {letter.companyName}.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
@@ -102,11 +101,6 @@ export default function CoverLetterList({ coverLetters }) {
               </div>
             </div>
           </CardHeader>
-          <CardContent>
-            <div className="text-muted-foreground text-sm line-clamp-3">
-              {letter.jobDescription}
-            </div>
-          </CardContent>
         </Card>
       ))}
     </div>

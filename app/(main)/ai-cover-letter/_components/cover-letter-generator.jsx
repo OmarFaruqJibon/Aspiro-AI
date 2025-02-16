@@ -59,7 +59,7 @@ export default function CoverLetterGenerator() {
 
   return (
     <div className="space-y-6">
-      <Card>
+      <Card className="small-screen-card">
         <CardHeader>
           <CardTitle>Job Details</CardTitle>
           <CardDescription>
@@ -115,14 +115,18 @@ export default function CoverLetterGenerator() {
             </div>
 
             <div className="flex justify-end">
-              <Button type="submit" disabled={generating}>
+              <Button
+                className="buttonn-effect"
+                type="submit"
+                disabled={generating}
+              >
                 {generating ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Generating...
                   </>
                 ) : (
-                  "Generate Cover Letter"
+                  "Generate"
                 )}
               </Button>
             </div>

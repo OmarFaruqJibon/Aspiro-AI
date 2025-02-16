@@ -152,9 +152,9 @@ export default function ResumeBuilder({ initialContent }) {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-2 mb-3">
         <h1 className="font-bold text-4xl md:text-4xl">Resume Builder</h1>
-        <div className="space-x-2">
+        <div className="space-x-2 resume-action">
           <Button
-            variant="destructive"
+            className="buttonn-effect w-3"
             onClick={handleSubmit(onSubmit)}
             disabled={isSaving}
           >
@@ -171,16 +171,20 @@ export default function ResumeBuilder({ initialContent }) {
             )}
           </Button>
 
-          <Button onClick={generatePDF} disabled={isGenerating}>
+          <Button
+            className="buttonn-effect"
+            onClick={generatePDF}
+            disabled={isGenerating}
+          >
             {isGenerating ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Generating PDF...
+                Generating...
               </>
             ) : (
               <>
                 <Download className="h-4 w-4" />
-                Download PDF
+                Download
               </>
             )}
           </Button>

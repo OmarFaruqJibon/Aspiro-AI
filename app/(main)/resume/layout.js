@@ -1,6 +1,8 @@
 import { BarLoader } from "react-spinners";
 import { Suspense } from "react";
-
+export const metadata = {
+    title: "Aspiro AI | Resume",
+};
 export default function Layout({ children }) {
     return (
         <div className="px-5 grid-background-dashboard">

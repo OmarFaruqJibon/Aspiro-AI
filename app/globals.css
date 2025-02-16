@@ -257,7 +257,7 @@ img {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Animated Glow Effect */
+/* Animated Glow Effect button for hero section start */
 .button-effect:before {
   content: '';
   position: absolute;
@@ -302,13 +302,11 @@ img {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
-/* Animation button effect */
-
+/* Animated Glow Effect button for hero section end */
 
 
 
-/* --------Anather button effect------------ */
+/* --------Anather button effect start------------ */
 .buttonn-effect {
   width: 180px;
   height: 40px;
@@ -394,11 +392,54 @@ img {
   animation: circuitSpark 2s infinite linear;
   border-radius: 50%;
 }
-
+ 
 @keyframes circuitSpark {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
   100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
 }
+
+
+/* For tablets (medium-sized screens) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .buttonn-effect {
+    width: 130px;
+    height: 30px;
+  }
+}
+
+/* For mobile screens (small screens) */
+@media (max-width: 767px) {
+  .resume-action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+
+  }
+
+  .buttonn-effect {
+    width: 140px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  .small-screen{
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .small-screen-card{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* --------Anather button effect end------------ */
+
+
+
+
+
+
 
 
 
