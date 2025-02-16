@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import MDEditor from "@uiw/react-md-editor";
 import { useReactToPrint } from "react-to-print";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";

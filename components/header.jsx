@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import {
   LayoutDashboard,
   ChevronDown,
-  Earth,
   Bot,
   FileUser,
   BookText,

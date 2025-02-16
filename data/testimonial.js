@@ -14,7 +14,7 @@ export const testimonial = [
   },
   {
     quote:
-      "As a junior developer, Aspiro AI helped me prepare for interviews with precise suggestions. It's a game-changer for job seekers!",
+      "As a junior developer, Aspiro AI helped me prepare interviews with precise suggestions. It's a game-changer for job seekers!",
     author: "Razia Sultana",
     image: "https://i.postimg.cc/vmhmJctY/pic-2.png",
     role: "Junior Web Developer",

@@ -1,6 +1,6 @@
 "use client";
 
-import { Trophy, CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -14,8 +14,8 @@ export default function QuizResult({
 
   return (
     <div className="mx-auto">
-      <h1 className="flex items-center gap-2 text-2xl gradient-title">
-        <Trophy className="h-5 w-5 text-amber-500" />
+      <h1 className="text-center text-2xl font-bold mb-6">
+        {/* <Trophy className="h-5 w-5 text-amber-500" /> */}
         Result
       </h1>
 
@@ -74,8 +74,8 @@ export default function QuizResult({
       </CardContent>
 
       {!hideStartNew && (
-        <CardFooter>
-          <Button onClick={onStartNew} className="w-full">
+        <CardFooter className="">
+          <Button onClick={onStartNew} className="buttonn-effect">
             Start New Quiz
           </Button>
         </CardFooter>

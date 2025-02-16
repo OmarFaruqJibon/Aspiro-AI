@@ -27,7 +27,7 @@ export default function QuizList({ assessments }) {
     <>
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between quiz-action">
             <div>
               <CardTitle className="text-xl md:text-2xl">
                 Recent Quizzes

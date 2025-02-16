@@ -151,7 +151,7 @@ export default function ResumeBuilder({ initialContent }) {
     <div data-color-mode="light" className="space-y-4">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-2 mb-3">
-        <h1 className="font-bold text-4xl md:text-4xl">Resume Builder</h1>
+        <h1 className="font-bold text-3xl md:text-4xl">Resume Builder</h1>
         <div className="space-x-2 resume-action">
           <Button
             className="buttonn-effect w-3"

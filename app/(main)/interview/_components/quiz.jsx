@@ -105,7 +105,7 @@ export default function Quiz() {
           <CardTitle>Are You Ready to Challenge Yourself?</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground small-screen-text">
             This quiz features 3 questions based on your industry and skills.
             Take your time and select the best answer for each one.
           </p>
@@ -120,7 +120,7 @@ export default function Quiz() {
   }
 
   const question = quizData[currentQuestion];
-  console.log(question.explanation.split(/(?=For example)/i));
+  // console.log(question.explanation.split(/(?=For example)/i));
 
   return (
     <Card className="mx-2">
@@ -130,7 +130,7 @@ export default function Quiz() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <p className="text-lg font-medium">{question.question}</p>
+        <p className="text-base font-medium">{question.question}</p>
         <RadioGroup
           onValueChange={handleAnswer}
           value={answers[currentQuestion]}
@@ -147,18 +147,21 @@ export default function Quiz() {
         {showExplanation && (
           <div className="mt-4 p-4 bg-muted rounded-lg">
             <p className="font-medium">Explanation</p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               {question.explanation.split(/(?=For example)/i)[0]}
             </p>
             <br />
-            <p style={{ marginTop: "10px" }} className="text-muted-foreground">
+            <p
+              style={{ marginTop: "10px" }}
+              className="text-muted-foreground text-sm"
+            >
               {question.explanation.split(/(?=For example)/i)[1]}
             </p>
           </div>
         )}
       </CardContent>
 
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex justify-between quiz-action">
         {!showExplanation && (
           <Button
             onClick={() => setShowExplanation(true)}
@@ -171,7 +174,7 @@ export default function Quiz() {
         <Button
           onClick={handleNext}
           disabled={!answers[currentQuestion] || savingResult}
-          className="ml-auto"
+          className=" buttonn-effect"
         >
           {savingResult && (
             <BarLoader className="mt-4" width={"100%"} color="gray" />

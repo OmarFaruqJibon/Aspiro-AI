@@ -398,41 +398,6 @@ img {
   100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
 }
 
-
-/* For tablets (medium-sized screens) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .buttonn-effect {
-    width: 130px;
-    height: 30px;
-  }
-}
-
-/* For mobile screens (small screens) */
-@media (max-width: 767px) {
-  .resume-action{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 20px;
-
-  }
-
-  .buttonn-effect {
-    width: 140px;
-    height: 40px;
-    margin-bottom: 20px;
-  }
-  .small-screen{
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
-  .small-screen-card{
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
 /* --------Anather button effect end------------ */
 
 
@@ -549,6 +514,8 @@ nav{
   /* transform: translateY(-10px); */
   transition: 0.2s;
 }
+
+
 .service-box p {
   /* text-align: center; */
   /* width: 230px; */
@@ -556,3 +523,53 @@ nav{
   color: #fff;
 }
 /*Testimonial end*/
+
+
+
+
+
+/* --------------MEDIA QUERY --------------- */
+
+/* For tablets (medium-sized screens) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .buttonn-effect {
+    width: 130px;
+    height: 30px;
+  }
+  .service-box {
+    height: 280px;
+  }
+}
+
+/* For mobile screens (small screens) */
+@media (max-width: 767px) {
+  .resume-action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+
+  }
+
+  .buttonn-effect {
+    width: 140px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  .small-screen{
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .small-screen-card{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .quiz-action{
+    flex-direction: column;
+    gap: 20px
+  }
+  .small-screen-text{
+    font-size: 14px;
+  }
+}
