@@ -24,13 +24,14 @@ import { useUser } from "@clerk/nextjs";
 import { entriesToMarkdown } from "@/app/lib/helper";
 import { resumeSchema } from "@/app/lib/schema";
 
-// import html2pdf from "html2pdf.js/dist/html2pdf.min.js";
+import html2pdf from "html2pdf.js/dist/html2pdf.min.js";
 
 export default function ResumeBuilder({ initialContent }) {
   const [activeTab, setActiveTab] = useState("edit");
   const [previewContent, setPreviewContent] = useState(initialContent);
   const { user } = useUser();
   const [resumeMode, setResumeMode] = useState("preview");
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const {
     control,
@@ -110,8 +111,6 @@ export default function ResumeBuilder({ initialContent }) {
       .join("\n\n");
   };
 
-  const [isGenerating, setIsGenerating] = useState(false);
-
   // generate PDF
   const generatePDF = async () => {
     setIsGenerating(true);
@@ -125,9 +124,9 @@ export default function ResumeBuilder({ initialContent }) {
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
       };
 
-      // await html2pdf().set(opt).from(element).save();
+      await html2pdf().set(opt).from(element).save();
     } catch (error) {
-      console.error("PDF generation error:", error);
+      // console.error("PDF generation error:", error);
     } finally {
       setIsGenerating(false);
     }
@@ -171,6 +170,7 @@ export default function ResumeBuilder({ initialContent }) {
               </>
             )}
           </Button>
+
           <Button onClick={generatePDF} disabled={isGenerating}>
             {isGenerating ? (
               <>
