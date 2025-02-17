@@ -56,7 +56,7 @@ const HeroSection = () => {
               eradicate tedious tasks, and drive business growth
             </p> */}
             <Image
-              src="/banner5.jpg"
+              src="/banner.jpg"
               width={1080}
               height={520}
               alt="Dashboard Preview"
