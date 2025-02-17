@@ -525,6 +525,57 @@ nav{
 /*Testimonial end*/
 
 
+/* --------- Social Media start ----------- */
+
+
+.social-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.share {
+  width: 2.5rem;
+  height: 2.5rem;
+  float: left;
+  margin: 2rem 2rem .5rem 0;
+  color: #00ffff;
+  box-shadow: 0 0 13px 0 #00ACED;
+  /* border: .125rem solid #353c4a; */
+  border-radius: 50%;
+  transition: 250ms;
+  
+  &:last-child {
+    margin-right: 0
+  }
+  
+  &:hover,
+  &:focus {
+    /* background: #f1f1f1; */
+  }
+  
+  &:focus {
+    outline-color: inherit;
+  }
+}
+.share svg{
+  margin: 10px;
+}
+
+.facebook {
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 24px 0  rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
+  }
+}
+
+
+/* --------- Social Media end-----------  */
+
 
 
 
