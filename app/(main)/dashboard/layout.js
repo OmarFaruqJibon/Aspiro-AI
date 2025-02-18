@@ -3,14 +3,14 @@ import { Suspense } from "react";
 
 
 export const metadata = {
-    title: "Aspiro AI | Dashboard",
+    title: "Aspiro AI | Career Navigator",
 };
 
 export default function Layout({ children }) {
     return (
         <div className="px-5">
             <div className="flex items-center justify-between mb-5">
-                <h1 className="text-4xl font-bold">Dashboard</h1>
+                <h1 className="text-4xl font-bold">Career Navigator</h1>
             </div>
             <Suspense
                 fallback={<BarLoader className="mt-4" width={"100%"} color="gray" />}

@@ -13,7 +13,7 @@ const Footer = () => {
               target="_blank"
               className="share facebook"
             >
-              <FaFacebook className="social-icon" size={20} />
+              <FaFacebook className="social-icon" size={17} />
             </a>
 
             <a
@@ -22,7 +22,7 @@ const Footer = () => {
               target="_blank"
               className="share facebook"
             >
-              <FaGithub className="social-icon" size={20} />
+              <FaGithub className="social-icon" size={17} />
             </a>
             <a
               href="https://github.com/OmarFaruqJibon"
@@ -30,7 +30,7 @@ const Footer = () => {
               target="_blank"
               className="share facebook"
             >
-              <FaLinkedin className="social-icon" size={20} />
+              <FaLinkedin className="social-icon" size={17} />
             </a>
           </div>
         </div>

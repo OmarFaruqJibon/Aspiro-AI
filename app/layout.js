@@ -5,8 +5,6 @@ import Header from "@/components/header";
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
-import { Facebook } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
 
 const inter = Inter({
@@ -15,7 +13,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Aspiro AI",
-  description: "Aspiro AI - An AI-powered career coaching platform designed to help job seekers streamline their job application process.",
+  description: "Aspiro AI - An AI-powered career assistant platform designed to help job seekers streamline their job application process.",
 };
 
 export default function RootLayout({ children }) {
@@ -35,23 +33,19 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            {/* MAIN SECTION */}
             <Header />
+            {/* MAIN SECTION */}
+
             <main className="min-h-screen">{children}</main>
             <Toaster richColors />
+
             {/* FOOTER SECTION */}
-            <footer className="bg-muted/50 py-12">
+            <footer className="bg-muted/50 py-4">
               <div className="container mx-auto px-4 text-center">
                 <Footer />
-
               </div>
             </footer>
           </ThemeProvider>
-
-
-
-
-
         </body>
       </html>
     </ClerkProvider>

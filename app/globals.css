@@ -128,10 +128,6 @@ img {
 }
 
 
-
-
-
-
 @layer utilities {
   .gradient {
     @apply bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600;
@@ -181,12 +177,7 @@ img {
 .blue { background-color: #3F51B5; }
 
 
-
-
-
-
-
-/* Animation hero button effect */
+/* Animation hero button effect start*/
 .glow-on-hover {
   width: 160px;
   height: 50px;
@@ -234,10 +225,10 @@ img {
   100% { background-position: 0 0; }
 }
 
-/* Animation hero button effect */
+/* Animation hero button effect end*/
 
 
-/* Animation button effect */
+/* Animation button effect start*/
 .button-effect {
   width: 200px;
   height: 40px;
@@ -403,18 +394,11 @@ img {
 
 
 
-
-
-
-
-
-
 /* ----------- card css start ------------*/
 @font-face {
   font-family: 'Neon Glow';
   src: url(https://assets.codepen.io/230569/NeonGlow-8VLz.ttf);
 }
-
 
 #gasses {
   display: flex;
@@ -476,7 +460,13 @@ nav{
               0px 4px 8px rgba(0,255,255,0.5), 
               0px 8px 16px rgba(0,255,255,0.5);
 }
+.cl-signUp-root{
+  margin-top: 100px !important;
+}
 
+.cl-signIn-root{
+  margin-top: 100px !important;
+}
 /*Nav end*/
 
 /*Testimonial*/
@@ -536,12 +526,12 @@ nav{
 }
 
 .share {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   float: left;
-  margin: 2rem 2rem .5rem 0;
+  margin: 1rem 2rem .5rem 0;
   color: #00ffff;
-  box-shadow: 0 0 13px 0 #00ACED;
+  box-shadow: 0 0 3px 0 #00ACED;
   border-radius: 50%;
   transition: 250ms;
   
@@ -554,7 +544,7 @@ nav{
   }
 }
 .share svg{
-  margin: 10px;
+  margin: 8px;
 }
 
 .facebook {
@@ -615,3 +605,4 @@ nav{
     font-size: 14px;
   }
 }
+
