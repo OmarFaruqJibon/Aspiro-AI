@@ -29,7 +29,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "framer-motion": "^12.4.2",
+    "framer-motion": "^12.4.5",
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.2",
     "inngest": "^3.31.3",

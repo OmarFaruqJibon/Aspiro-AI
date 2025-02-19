@@ -57,7 +57,7 @@ const Header = async () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-2">
-                  <Bot className="h-4 w-4" />
+                  <Bot className="md:hidden h-4 w-4" />
                   <span className="hidden md:block">AI Tools</span>
                   <ChevronDown className="h-4 w-4" />
                 </Button>

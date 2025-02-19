@@ -1,31 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import Image from "next/image";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const HeroSection = () => {
-  const imageRef = useRef(null);
-
-  useEffect(() => {
-    const imageElement = imageRef.current;
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
-
-      if (scrollPosition > scrollThreshold) {
-        imageElement.classList.add("scrolled");
-      } else {
-        imageElement.classList.remove("scrolled");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section className="w-full pt-36 md:pt-48 pb-10 mb-12">
       <div className="space-y-6 text-center">
@@ -41,7 +20,7 @@ const HeroSection = () => {
           </p>
         </div>
 
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-4 start-mar">
           <Link href="/dashboard">
             <Button size="lg" className="glow-on-hover my-10">
               Lets Start
@@ -49,21 +28,10 @@ const HeroSection = () => {
           </Link>
         </div>
 
-        <div className="hero-image-wrapper mt-5 md:mt-0">
-          <div ref={imageRef} className="hero-image">
-            {/* <p>
-              We develop AI solutions that enhance customer interactions,
-              eradicate tedious tasks, and drive business growth
-            </p> */}
-            <Image
-              src="/banner.jpg"
-              width={1080}
-              height={520}
-              alt="Dashboard Preview"
-              className="rounded-lg shadow-2xl border mx-auto"
-              priority
-            />
-          </div>
+        <div className="gemini-effect">
+          <div className="glow-circle"></div>
+          <div className="line left-line-1"></div>
+          <div className="line right-line-1"></div>
         </div>
       </div>
     </section>
