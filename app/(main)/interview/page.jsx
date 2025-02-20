@@ -4,7 +4,7 @@ import PerformanceChart from "./_components/performace-chart";
 import QuizList from "./_components/quiz-list";
 
 export const metadata = {
-  title: "Aspiro AI - Interview Preparation",
+  title: "Aspiro AI | Interview Preparation",
 };
 
 export default async function InterviewPrepPage() {

@@ -45,11 +45,10 @@ const Header = async () => {
                 variant="ghost"
                 className="hidden md:inline-flex items-center gap-2"
               >
-                {/* <Earth className="h-4 w-4" /> */}
                 Career Navigator
               </Button>
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                <LayoutDashboard className="h-5 w-5" />
+                <LayoutDashboard className="h-4 w-4" />
               </Button>
             </Link>
 
@@ -60,7 +59,6 @@ const Header = async () => {
                   variant="ghost"
                   className="flex items-center gap-2 nav-ai-btn"
                 >
-                  {/* <Bot className="md:hidden h-4 w-4" /> */}
                   <Image
                     className="md:hidden "
                     src="/star.png"
