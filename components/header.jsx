@@ -49,15 +49,26 @@ const Header = async () => {
                 Career Navigator
               </Button>
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                <LayoutDashboard className="h-4 w-4" />
+                <LayoutDashboard className="h-5 w-5" />
               </Button>
             </Link>
 
             {/* AI Tools Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-2">
-                  <Bot className="md:hidden h-4 w-4" />
+                <Button
+                  variant="ghost"
+                  className="flex items-center gap-2 nav-ai-btn"
+                >
+                  {/* <Bot className="md:hidden h-4 w-4" /> */}
+                  <Image
+                    className="md:hidden "
+                    src="/star.png"
+                    width={25}
+                    height={25}
+                    alt="Header AI Icon"
+                    priority
+                  />
                   <span className="hidden md:block">AI Tools</span>
                   <ChevronDown className="h-4 w-4" />
                 </Button>

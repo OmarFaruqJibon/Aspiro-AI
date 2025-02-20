@@ -77,14 +77,15 @@ const OnboardingForm = ({ industries }) => {
 
   return (
     <div className="flex items-center justify-center bg-background">
-      <Card className="w-full max-w-lg mt-10 mx-2">
-        <CardHeader>
-          <CardTitle className="text-4xl">Complete Your Profile</CardTitle>
+      <Card className="w-full max-w-lg mt-10 mx-2 mb-10">
+        <CardHeader className="text-center mb-4">
+          <CardTitle className="text-4xl">Your Information</CardTitle>
           <CardDescription>
-            Select your industry to get personalized career insights and
+            Select your industry to get personalized career navigation and
             recommendations.
           </CardDescription>
         </CardHeader>
+
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-2">
@@ -148,7 +149,7 @@ const OnboardingForm = ({ industries }) => {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="experience">Years of Experience</Label>
+              <Label htmlFor="experience">Experience</Label>
               <Input
                 id="experience"
                 type="number"
@@ -168,11 +169,11 @@ const OnboardingForm = ({ industries }) => {
               <Label htmlFor="skills">Skills</Label>
               <Input
                 id="skills"
-                placeholder="e.g., Python, JavaScript, Project Management"
+                placeholder="e.g., Project Management, Programming, Healthcare, "
                 {...register("skills")}
               />
-              <p className="text-sm text-muted-foreground">
-                Separate multiple skills with commas
+              <p className="text-xs text-muted-foreground">
+                You can write multiple skills, separate with commas
               </p>
               {errors.skills && (
                 <p className="text-sm text-red-500">{errors.skills.message}</p>
@@ -180,11 +181,11 @@ const OnboardingForm = ({ industries }) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="bio">Professional Bio</Label>
+              <Label htmlFor="bio">Professional Biography</Label>
               <Textarea
                 id="bio"
-                placeholder="Tell us about your professional background..."
-                className="h-32"
+                placeholder="Write a brief summary of your Professional Background, Skills, and Achievements"
+                className="h-40"
                 {...register("bio")}
               />
               {errors.bio && (
@@ -192,7 +193,12 @@ const OnboardingForm = ({ industries }) => {
               )}
             </div>
 
-            <Button type="submit" className="w-full" disabled={updateLoading}>
+            <Button
+              type="submit"
+              className="buttonn-effect"
+              disabled={updateLoading}
+              style={{ width: "100%", borderRadius: "10px" }}
+            >
               {updateLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />

@@ -3,10 +3,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="w-full pt-36 md:pt-48 pb-10 mb-12">
+    <section className="w-full pt-36 md:pt-40 pb-10 mb-12">
       <div className="space-y-6 text-center">
         <div className="space-y-6 mx-auto mb-7">
           <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl animate-gradient">
@@ -29,7 +30,17 @@ const HeroSection = () => {
         </div>
 
         <div className="gemini-effect">
-          <div className="glow-circle"></div>
+          <div className="glow-circle">
+            {/* <div className="brain-icon">
+              <Image
+                src="/artificial-intelligence.png"
+                width={50}
+                height={50}
+                alt="Hero AI"
+                priority
+              />
+            </div> */}
+          </div>
           <div className="line left-line-1"></div>
           <div className="line right-line-1"></div>
         </div>
