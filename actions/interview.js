@@ -19,12 +19,12 @@ export async function generateQuiz() {
 
     try {
         const prompt = `
-        Generate 7 technical interview questions for a ${user.industry} professional
+        Generate 5 technical interview questions for a ${user.industry} professional
         ${user.skills?.length ? ` with expertise in ${user.skills.join(", ")}` : ""}.
 
         Each question should be multiple choice with 4 options.
-        There should be an explanation for each question. The explanation should be extensive
-        (100 words), easy to understand, and include an example or code snippet where applicable.
+        There should be an explanation for each question if possible. The explanation should be extensive
+        (50 words), easy to understand, and include an example or code snippet where applicable.
 
         Return the response in JSON format ONLY:
         {

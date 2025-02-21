@@ -106,7 +106,7 @@ export default function Quiz() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground small-screen-text">
-            This quiz features 7 questions based on your industry and skills.
+            This quiz features 5 questions based on your industry and skills.
             Take your time and select the best answer for each one.
           </p>
         </CardContent>
