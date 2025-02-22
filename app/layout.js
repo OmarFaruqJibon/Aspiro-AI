@@ -14,6 +14,7 @@ const inter = Inter({
 export const metadata = {
   title: "Aspiro AI",
   description: "Aspiro AI - An AI-powered career assistant platform designed to help job seekers streamline their job application process.",
+
 };
 
 export default function RootLayout({ children }) {

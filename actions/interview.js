@@ -51,9 +51,6 @@ export async function generateQuiz() {
 
         const text = result.response.text().trim();
 
-        // Log the raw response to check for issues
-        // console.log("Raw Gemini response:", text);
-
         let jsonMatch = text.match(/\{[\s\S]*\}/); // Extract JSON content
         if (!jsonMatch) {
             console.error("Error: Gemini response did not contain JSON:", text);

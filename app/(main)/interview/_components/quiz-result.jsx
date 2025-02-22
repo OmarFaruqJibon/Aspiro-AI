@@ -15,7 +15,6 @@ export default function QuizResult({
   return (
     <div className="mx-auto">
       <h1 className="text-center text-2xl font-bold mb-6">
-        {/* <Trophy className="h-5 w-5 text-amber-500" /> */}
         Result
       </h1>
 
@@ -63,7 +62,6 @@ export default function QuizResult({
                   className="text-muted-foreground"
                   style={{ fontSize: "13px" }}
                 >
-                  {/* {q.explanation} */}
                   {q.explanation.split(/(?=For example)/i)[0]}
                   {q.explanation.split(/(?=For example)/i)[1]}
                 </p>

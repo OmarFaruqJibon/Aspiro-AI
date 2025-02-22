@@ -55,12 +55,11 @@ export async function updateUser(data) {
                 return { updatedUser, industryInsight };
             },
             {
-                timeout: 10000, // default: 5000
+                timeout: 10000,
             }
         );
 
         revalidatePath("/");
-        // return result.user;
         return { success: true, ...result };
     } catch (error) {
         console.error("Error updating user and industry:", error.message);

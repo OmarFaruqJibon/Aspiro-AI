@@ -3,7 +3,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -30,17 +29,7 @@ const HeroSection = () => {
         </div>
 
         <div className="gemini-effect">
-          <div className="glow-circle">
-            {/* <div className="brain-icon">
-              <Image
-                src="/artificial-intelligence.png"
-                width={50}
-                height={50}
-                alt="Hero AI"
-                priority
-              />
-            </div> */}
-          </div>
+          <div className="glow-circle"></div>
           <div className="line left-line-1"></div>
           <div className="line right-line-1"></div>
         </div>

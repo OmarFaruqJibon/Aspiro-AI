@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import {
   LayoutDashboard,
   ChevronDown,
-  Bot,
   FileUser,
   BookText,
   LetterText,
@@ -18,7 +17,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { checkUser } from "@/lib/checkUser";
-// import { checkUser } from "@/lib/checkUser";
 
 const Header = async () => {
   await checkUser();
@@ -99,7 +97,7 @@ const Header = async () => {
 
           <SignedOut>
             <SignInButton>
-              <Button variant="outline">Sign In</Button>
+              <Button variant="ghost">Sign In</Button>
             </SignInButton>
           </SignedOut>
 
